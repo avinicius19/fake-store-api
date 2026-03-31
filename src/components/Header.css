@@ -1,0 +1,52 @@
+.header {
+    width: 100%;
+    background-color: #000000;
+    height: 70px;
+}
+
+.container {
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.nav {
+    display: flex;
+    gap: 3rem;
+}
+
+.titulo {
+    color: #fff;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+svg {
+    cursor: pointer;
+}
+
+.cart-icon {
+    position: relative;
+}
+
+.cart-icon span {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    font-size: 12px;
+    padding: 2px 6px;
+    cursor: pointer;
+}

@@ -1,0 +1,29 @@
+.cart {
+  position: fixed;      /* fixa na tela */
+  top: 0;
+  right: 0;             /* colado na direita */
+  width: 300px;
+  height: 100vh;        /* altura total da tela */
+  background-color: #fff;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+  padding: 20px;
+  z-index: 1000;
+}
+
+.close button{
+  padding: 5px;
+  border-radius: 15px;
+  border: none;
+  display: flex;
+  justify-content: center;
+}
+
+.close{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.cart-product{
+  margin-top: 1rem;
+}
