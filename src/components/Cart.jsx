@@ -17,17 +17,16 @@ const Cart = ({ cart, toggleCart, eraseProducts, totalPrices }) => {
                 : (cart.map((product) => (
                     <div key={product.id} className='cart-product'>
                         <button onClick={() => eraseProducts(product.id)} ><IoIosCloseCircleOutline /></button>
+                        <img src={product.images} alt="" />
                         <h4>{product.title}</h4>
                         <strong>Preço: {product.price}</strong>
-
+                        <span> x{product.quantity}</span>
                     </div>)
                 ))}
 
             <div className="total">
-                {totalPrices === 0 ? <span>R$ 0,00</span> : <h3>Total: {totalPrices.toLocaleString('pt-BR', {
-                    style: 'currency',
-                    currency: 'BRL'
-                })} </h3>}
+                {totalPrices === 0 ? <span>R$ 0,00</span> : <h3>Total: {totalPrices} </h3>}
+
             </div>
 
         </div>

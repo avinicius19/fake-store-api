@@ -13,10 +13,10 @@ const ListaProdutos = ({ addToCart, cart }) => {
         setLoading(true);
         axios({
             method: 'GET',
-            url: 'https://fakestoreapi.com/products'
+            url: 'https://dummyjson.com/products'
         }).then(res => {
              /* o state data, esta com todos os dados da API */
-            setData(res.data);
+            setData(res.data.products);
         }).catch(error => {
             console.log(error);
         }).finally(() => setLoading(false))
@@ -27,7 +27,7 @@ const ListaProdutos = ({ addToCart, cart }) => {
             {loading && <h1>Carregando produtos...</h1>}
             {data.map((product) => (
                 <div key={product.id} className='card'>
-                    <img src={product.image} alt={product.title} />
+                    <img src={product.images} alt={product.title} />
                     <div className="card-description">
                         <h1>{product.title}</h1>
                         <strong>Preço: R$ {product.price}</strong>
@@ -40,3 +40,5 @@ const ListaProdutos = ({ addToCart, cart }) => {
 }
 
 export default ListaProdutos
+
+/* quantity + 1 ao clicar */

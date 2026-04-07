@@ -18,15 +18,33 @@ function App() {
 
   /* joga os itens para o carrinho | cart */
   const addToCart = (product) => {
-    setCart(prev => [...prev, product])
-    console.log(product);
-    console.log(cart);
+
+    const existingProduct = cart.find(itemCarrinho => itemCarrinho.id === product.id)
+
+    if (existingProduct) {
+      const updatedCart = cart.map((item) => {
+        if (item.id === product.id) {
+          return {
+            ...item,
+            quantity: item.quantity + 1
+          }
+        } else {
+          return item;
+        }
+      })
+
+      setCart(updatedCart)
+    } else {
+      setCart(prev => [...prev, { ...product, quantity: 1 }])
+    }
+
+    console.log(cart)
   }
 
 
   /* transforma o array de preços em um só, somando apenas o price */
   const totalPrices = cart.reduce((acc, product) => {
-    return acc + product.price;
+    return acc + product.price * product.quantity;
   }, 0)
 
   /* ao clicar no produto, o id do item clicado é passado como parametro na função, e depois comparado com o product.id */
