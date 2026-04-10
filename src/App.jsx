@@ -12,33 +12,34 @@ function App() {
   /*  muda o estado anterior do isCartOpen, se estiver false, não abre, se estiver true, abre carrinho */
   const toggleCart = () => {
     setIsCartOpen(prev => !prev)
-    console.log(isCartOpen);
-
   }
 
   /* joga os itens para o carrinho | cart */
   const addToCart = (product) => {
 
-    const existingProduct = cart.find(itemCarrinho => itemCarrinho.id === product.id)
+    /* Procura no carrinho e vê se já existe um item com o mesmo id do produto que eu acabei de clicar */
+    const existingProduct = cart.find(itemNoCarrinho => itemNoCarrinho.id === product.id)
 
     if (existingProduct) {
+      /* Somente o item que tem o mesmo id do produto clicado tem a quantity incrementada (+1) */
       const updatedCart = cart.map((item) => {
         if (item.id === product.id) {
           return {
             ...item,
             quantity: item.quantity + 1
           }
+          /* manter os outros itens */
         } else {
           return item;
         }
       })
 
       setCart(updatedCart)
+      /* adiciona novo produto */
     } else {
       setCart(prev => [...prev, { ...product, quantity: 1 }])
     }
 
-    console.log(cart)
   }
 
 
@@ -49,9 +50,30 @@ function App() {
 
   /* ao clicar no produto, o id do item clicado é passado como parametro na função, e depois comparado com o product.id */
   const eraseProducts = (id) => {
-    const erased = cart.filter((product) => product.id !== id)
-    setCart(erased)
-    console.log(erased);
+
+    /* Procura no carrinho e vê se já existe um item com o mesmo id do produto que eu acabei de clicar */
+    const existingProduct = cart.find((itemNoCarrinho) => itemNoCarrinho.id === id);
+
+    if (existingProduct.quantity > 1) {
+      const removingIdProducts = cart.map((item) => {
+        /* item.id -> esta no carrinho | id -> item clicado */
+        if (item.id === id) {
+          return {
+            ...item,
+            quantity: item.quantity - 1
+          }
+        } else {
+          return item;
+        }
+      })
+      setCart(removingIdProducts);
+
+    } else {
+      const erased = cart.filter((product) => product.id !== id)
+      setCart(erased)
+    }
+
+
   }
 
   return (
