@@ -73,7 +73,6 @@ function App() {
       setCart(erased)
     }
 
-
   }
 
   return (

@@ -15,7 +15,7 @@ const ListaProdutos = ({ addToCart, cart }) => {
             method: 'GET',
             url: 'https://dummyjson.com/products'
         }).then(res => {
-             /* o state data, esta com todos os dados da API */
+            /* o state data, esta com todos os dados da API */
             setData(res.data.products);
         }).catch(error => {
             console.log(error);
@@ -30,9 +30,9 @@ const ListaProdutos = ({ addToCart, cart }) => {
                     <img src={product.images} alt={product.title} />
                     <div className="card-description">
                         <h1>{product.title}</h1>
-                        <strong>Preço: R$ {product.price}</strong>
+                        <span>Preço: <strong>R$ {product.price}</strong></span>
                     </div>
-                    <button className='buy' onClick={() => addToCart(product)}>Comprar</button>
+                    <button className='buy' onClick={() => addToCart(product)}>Adicionar ao carrinho</button>
                 </div>
             ))}
         </div>

@@ -7,51 +7,85 @@
     justify-content: center;
     max-width: 1200px;
     margin: 0 auto;
-    
 }
 
 .card {
     width: 250px;
-    background-color: rgb(232, 240, 238);
+    background-color: rgb(216, 226, 224);
     border-radius: 20px;
     padding: 1.2rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     min-height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin-top: 1.2rem;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+    transition: 0.25s ease;
 }
 
-
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 22px rgba(0, 0, 0, 0.12);
+}
 
 .card-description {
     display: block;
     padding: 10px;
     overflow: hidden;
-}
-
-.card-description p {
-    font-size: 0.8rem;
-    color: #555;
+    margin-top: 1.2rem;
 }
 
 .card-description h1 {
-    font-size: 1.1rem;
-    margin-bottom: 8px;
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    color: #111;
+}
+
+.card-description span {
+    font-size: 1rem;
+    color: #333;
+    font-family: Montserrat;
+}
+
+.card-description strong {
+    font-size: 1rem;
+    color: #000;
+    font-weight: bold;
+    font-family: Montserrat;
 }
 
 img {
     width: 100%;
-    object-fit: contain;
     height: 200px;
+    object-fit: contain;
     display: flex;
     margin: 0 auto;
+    border-radius: 12px;
+    background: rgba(248, 245, 245, 0.5);
+    padding: 8px;
 }
 
 .buy {
-    background-color: aquamarine;
+    color: #000;
+    background-color: rgb(228, 207, 24);
     border: none;
-    padding: 5px;
+    padding: 8px;
     cursor: pointer;
+    font-family: Montserrat;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.2s ease;
+}
+
+.buy:hover {
+    background-color: #000;
+    color: rgb(228, 207, 24);
+    transform: scale(1.02);
+}
+
+.buy:active {
+    transform: scale(0.98);
 }

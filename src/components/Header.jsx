@@ -7,8 +7,8 @@ const Header = ({ cart, toggleCart }) => {
                 <h1 className='titulo'>TemDeTudo</h1>
 
                 <nav className='nav'>
-                    <a href="#">Home</a>
-                    <a href="#">Login</a>
+                    {/* <a href="#">Home</a> */}
+                    {/* <a href="#">Login</a> */}
                 </nav>
                 <div className="cart-icon" onClick={toggleCart}>
                     <BsCartPlus size={25} color="white" />

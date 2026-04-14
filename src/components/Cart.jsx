@@ -12,17 +12,18 @@ const Cart = ({ cart, toggleCart, eraseProducts, totalPrices }) => {
                 <button onClick={toggleCart} ><IoIosCloseCircleOutline /></button>
 
             </div>
-
-            {cart.length === 0 ? (<p>Seu carrinho esta vazio</p>)
-                : (cart.map((product) => (
-                    <div key={product.id} className='cart-product'>
-                        <button onClick={() => eraseProducts(product.id)} ><IoIosCloseCircleOutline /></button>
-                        <img src={product.images} alt="" />
-                        <h4>{product.title}</h4>
-                        <strong>Preço: {product.price}</strong>
-                        <span> x{product.quantity}</span>
-                    </div>)
-                ))}
+            <div className="lista-produtos">
+                {cart.length === 0 ? (<p>Seu carrinho esta vazio</p>)
+                    : (cart.map((product) => (
+                        <div key={product.id} className='cart-product'>
+                            <button onClick={() => eraseProducts(product.id)} ><IoIosCloseCircleOutline /></button>
+                            <img src={product.images} alt="" />
+                            <h4 className='cart-title'>{product.title}</h4>
+                            <strong>Preço: {product.price}</strong>
+                            <span> x{product.quantity}</span>
+                        </div>)
+                    ))}
+            </div>
 
             <div className="total">
                 {totalPrices === 0 ? <span>R$ 0,00</span> : <h3>Total: {totalPrices} </h3>}
