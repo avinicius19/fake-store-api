@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import Header from './components/Header'
 import ListaProdutos from './components/ListaProdutos'
@@ -6,8 +6,23 @@ import Cart from './components/Cart';
 
 function App() {
 
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(() => {
+    const savedItems = localStorage.getItem('items');
+    if (savedItems) {
+      return JSON.parse(savedItems)
+    }
+    return [];
+  });
   const [isCartOpen, setIsCartOpen] = useState(false);
+
+  /* localstorage */
+  useEffect(() => {
+    localStorage.getItem('items', JSON.stringify(cart))
+  }, [cart])
+
+  useEffect(() => {
+    localStorage.setItem('items', JSON.stringify(cart))
+  }, [cart])
 
   /*  muda o estado anterior do isCartOpen, se estiver false, não abre, se estiver true, abre carrinho */
   const toggleCart = () => {

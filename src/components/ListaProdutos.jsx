@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './ListaProdutos.css'
-
+import { ClipLoader } from "react-spinners";
 import axios from 'axios';
 
 const ListaProdutos = ({ addToCart, cart }) => {
@@ -24,13 +24,16 @@ const ListaProdutos = ({ addToCart, cart }) => {
 
     return (
         <div className='products-container'>
-            {loading && <h1>Carregando produtos...</h1>}
+            {loading && <ClipLoader size={40} />}
             {data.map((product) => (
                 <div key={product.id} className='card'>
                     <img src={product.images} alt={product.title} />
                     <div className="card-description">
                         <h1>{product.title}</h1>
-                        <span>Preço: <strong>R$ {product.price}</strong></span>
+                        <span>Preço: <strong> {product.price.toLocaleString('pt-BR', {
+                            style: 'currency',
+                            currency: 'BRL'
+                        })}</strong></span>
                     </div>
                     <button className='buy' onClick={() => addToCart(product)}>Adicionar ao carrinho</button>
                 </div>
@@ -41,4 +44,3 @@ const ListaProdutos = ({ addToCart, cart }) => {
 
 export default ListaProdutos
 
-/* quantity + 1 ao clicar */
