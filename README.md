@@ -1,16 +1,112 @@
-# React + Vite
+# 🛒 TemDeTudo - E-commerce React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 Sobre o projeto
 
-Currently, two official plugins are available:
+O **TemDeTudo** é um projeto de e-commerce desenvolvido com **React**, com foco em praticar conceitos essenciais do front-end moderno como consumo de API, gerenciamento de estado, componentes reutilizáveis e manipulação de dados.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+A aplicação permite visualizar produtos, adicionar itens ao carrinho, controlar quantidades, remover produtos e salvar os dados no navegador.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Funcionalidades
 
-## Expanding the ESLint configuration
+✅ Listagem dinâmica de produtos via API
+✅ Carrinho lateral interativo
+✅ Adicionar produtos ao carrinho
+✅ Incremento automático de quantidade
+✅ Remover produtos do carrinho
+✅ Cálculo automático do valor total
+✅ Preços formatados em Real (BRL)
+✅ Persistência com LocalStorage
+✅ Loading durante carregamento da API
+✅ Interface responsiva e moderna
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tecnologias utilizadas
+
+* React
+* JavaScript (ES6+)
+* CSS3
+* Axios
+* React Icons
+* LocalStorage
+
+---
+
+## 🌐 API utilizada
+
+Os produtos são consumidos da API pública:
+
+DummyJSON
+
+---
+
+## 📂 Estrutura do projeto
+
+```text
+src/
+ ├── components/
+ │   ├── Header.jsx
+ │   ├── ListaProdutos.jsx
+ │   └── Cart.jsx
+ │
+ ├── App.jsx
+ ├── main.jsx
+ └── styles/
+```
+
+---
+
+## 🧠 Conceitos praticados
+
+Durante o desenvolvimento foram aplicados conceitos importantes como:
+
+* useState
+* useEffect
+* Props
+* Renderização condicional
+* map()
+* filter()
+* find()
+* reduce()
+* Spread Operator
+* Componentização
+* Persistência de dados
+
+---
+
+## ▶️ Como rodar o projeto
+
+### Instalar dependências
+
+```bash
+npm install
+```
+
+### Rodar aplicação
+
+```bash
+npm run dev
+```
+
+---
+
+## 📸 Preview
+
+Preview do Projeto
+
+<img src='./foto01.png'  width="200">
+<img src='./foto02.png'  width="200">
+
+---
+
+## 📈 Objetivo
+
+Este projeto foi desenvolvido com foco em evolução prática como desenvolvedor front-end, simulando funcionalidades comuns de um e-commerce real.
+
+---
+
+## 👨‍💻 Autor
+
+Desenvolvido por Antonio Costa.
